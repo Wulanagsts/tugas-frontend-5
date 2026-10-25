@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog UMKM</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cards.css">
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/store.js" defer></script>
+    <script src="assets/js/tugas5.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-inner">
+            <div>
+                <h1>KATALOG UMKM</h1>
+                <p class="subtitle">Kartu Produk</p>
+            </div>
+            <nav class="nav-links" aria-label="Navigasi utama">
+                <a href="tugas 3&4.html">Kelola Produk</a>
+                <a href="product-card.html" class="active" aria-current="page">Kartu Produk</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="summary-bar" aria-label="Ringkasan produk">
+            <div class="stat"><span class="stat-label">Total Produk</span><strong id="stat-total">0</strong></div>
+            <div class="stat"><span class="stat-label">Aktif</span><strong id="stat-active">0</strong></div>
+            <div class="stat"><span class="stat-label">Nonaktif</span><strong id="stat-inactive">0</strong></div>
+            <div class="stat"><span class="stat-label">Total Nilai Stok</span><strong id="stat-value">Rp0</strong></div>
+        </section>
+
+        <section id="product-container" class="product-grid" aria-live="polite"></section>
+
+        <p id="empty-state" class="empty-state" hidden>
+            Belum ada produk. <a href="tugas 3&4.html">Tambah produk</a> terlebih dahulu.
+        </p>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Katalog UMKM - STIKOM PGRI Banyuwangi</p>
+    </footer>
+</body>
+</html>

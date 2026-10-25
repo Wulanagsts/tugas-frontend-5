@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog UMKM</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/store.js" defer></script>
+    <script src="assets/js/tugas4.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-inner">
+            <div>
+                <h1>KATALOG UMKM</h1>
+                <p class="subtitle">Kelola Produk</p>
+            </div>
+            <nav class="nav-links" aria-label="Navigasi utama">
+                <a href="tugas 3&4.html" class="active" aria-current="page">Kelola Produk</a>
+                <a href="product-card.html">Kartu Produk</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container layout">
+        <section class="card form-section">
+            <h2 id="form-title">Tambah Produk Baru</h2>
+            <form id="product-form" novalidate>
+                <div class="form-group">
+                    <label for="product-name">Name:</label>
+                    <input type="text" id="product-name" required placeholder="Contoh: Keyboard RGB">
+                </div>
+                <div class="form-group">
+                    <label for="product-category">Categori:</label>
+                    <select id="product-category" required>
+                        <option value="">-- Pilih Categori --</option>
+                        <option value="Elektronik">Elektronik</option>
+                        <option value="Audio">Audio</option>
+                        <option value="Aksesoris">Aksesoris</option>
+                        <option value="Penyimpanan">Penyimpanan</option>
+                        <option value="Komponen">Komponen</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Price (Rp):</label>
+                    <input type="number" id="product-price" required min="1000" placeholder="Contoh: 350000">
+                </div>
+                <div class="form-group">
+                    <label for="product-stock">Stok:</label>
+                    <input type="number" id="product-stock" required min="0" step="1" placeholder="Contoh: 10">
+                </div>
+                <div class="button-row">
+                    <button type="submit" id="btn-submit" class="btn btn-primary">Simpan Produk</button>
+                    <button type="button" id="btn-cancel" class="btn btn-warning" hidden>Batal Edit</button>
+                    <button type="button" id="btn-clear" class="btn btn-secondary">Kosongkan Form</button>
+                </div>
+            </form>
+            <div id="form-feedback" class="feedback-msg" role="status" aria-live="polite"></div>
+        </section>
+
+        <section class="card preview-section">
+            <h2>Live Preview</h2>
+            <p class="hint">Tampil otomatis saat kamu mengisi form.</p>
+            <div id="live-preview" class="preview-box"></div>
+        </section>
+    </main>
+
+    <section class="container card list-section">
+        <div class="list-header">
+            <h2>Daftar Produk</h2>
+            <div class="toolbar">
+                <div class="filter-group">
+                    <label for="search-input">Cari:</label>
+                    <input type="search" id="search-input" placeholder="Nama atau kategori...">
+                </div>
+                <div class="filter-group">
+                    <label for="filter-category">Categori:</label>
+                    <select id="filter-category">
+                        <option value="Semua">Semua</option>
+                        <option value="Elektronik">Elektronik</option>
+                        <option value="Audio">Audio</option>
+                        <option value="Aksesoris">Aksesoris</option>
+                        <option value="Penyimpanan">Penyimpanan</option>
+                        <option value="Komponen">Komponen</option>
+                    </select>
+                </div>
+                <button type="button" id="btn-reset-data" class="btn btn-secondary btn-small">Reset Data</button>
+            </div>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Categori</th>
+                        <th>Price</th>
+                        <th>Stok</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="product-table-body"></tbody>
+            </table>
+        </div>
+        <p id="stock-summary" class="summary"></p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Katalog UMKM - STIKOM PGRI Banyuwangi</p>
+    </footer>
+</body>
+</html>
